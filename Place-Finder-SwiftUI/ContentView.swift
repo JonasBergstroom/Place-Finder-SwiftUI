@@ -6,11 +6,28 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    @StateObject private var mapAPI = MapAPI()
+    @State private var text = ""
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            TextField("Enter town here", text: $text)
+                .textFieldStyle(.roundedBorder)
+                .padding(.horizontal)
+            
+            Button("Search Town") {
+                mapAPI.getLocation(address: text, delta: 1)
+            }
+            Map(coordinateRegion: $mapAPI.region, annotationItems: mapAPI.locations) {
+                location in
+                MapMarker(coordinate: location.coordinate, tint: .blue)
+            }
+            .ignoresSafeArea()
+        }
     }
 }
 

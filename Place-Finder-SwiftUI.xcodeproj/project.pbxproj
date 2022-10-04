@@ -57,9 +57,9 @@
 				2EE707FB28EC8E79001519F2 /* Info.plist */,
 				2EE707ED28EC8DC7001519F2 /* Place_Finder_SwiftUIApp.swift */,
 				2EE707EF28EC8DC7001519F2 /* ContentView.swift */,
+				2EE707FC28EC8FD0001519F2 /* MapModel.swift */,
 				2EE707F128EC8DC9001519F2 /* Assets.xcassets */,
 				2EE707F328EC8DC9001519F2 /* Preview Content */,
-				2EE707FC28EC8FD0001519F2 /* MapModel.swift */,
 			);
 			path = "Place-Finder-SwiftUI";
 			sourceTree = "<group>";
