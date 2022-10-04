@@ -12,6 +12,9 @@ struct ContentView: View {
     @StateObject private var mapAPI = MapAPI()
     @State private var text = ""
     
+    private func clearTextField() {
+        text = ""
+    }
     
     var body: some View {
         VStack {
@@ -20,7 +23,8 @@ struct ContentView: View {
                 .padding(.horizontal)
             
             Button("Search Town") {
-                mapAPI.getLocation(address: text, delta: 1)
+                mapAPI.getLocation(address: text, delta: 0.5)
+                clearTextField()
             }
             Map(coordinateRegion: $mapAPI.region, annotationItems: mapAPI.locations) {
                 location in
