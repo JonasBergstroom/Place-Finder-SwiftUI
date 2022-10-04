@@ -16,6 +16,11 @@ struct ContentView: View {
         text = ""
     }
     
+    func endTextEditing() {
+      UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                      to: nil, from: nil, for: nil)
+    }
+    
     var body: some View {
         VStack {
             TextField("Enter town here", text: $text)
@@ -25,6 +30,7 @@ struct ContentView: View {
             Button("Search Town") {
                 mapAPI.getLocation(address: text, delta: 0.5)
                 clearTextField()
+                endTextEditing() 
             }
             Map(coordinateRegion: $mapAPI.region, annotationItems: mapAPI.locations) {
                 location in
