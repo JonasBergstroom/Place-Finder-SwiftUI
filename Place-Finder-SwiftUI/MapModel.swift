@@ -34,8 +34,7 @@ class MapAPI: ObservableObject {
     
     init() {
         self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.334591, longitude: 18.063240), span: MKCoordinateSpan(latitudeDelta: 3, longitudeDelta: 3))
-        
-        self.locations.insert(Location(name: "Pin", coordinate: CLLocationCoordinate2D(latitude: 59.334591, longitude: 18.063240)), at: 0)
+
     }
     
     func getLocation(address: String, delta: Double) {
