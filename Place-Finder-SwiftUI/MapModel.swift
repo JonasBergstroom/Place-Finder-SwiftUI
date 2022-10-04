@@ -33,7 +33,7 @@ class MapAPI: ObservableObject {
     @Published var locations: [Location] = []
     
     init() {
-        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.334591, longitude: 18.063240), span: MKCoordinateSpan(latitudeDelta: 3, longitudeDelta: 3))
+        self.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.334591, longitude: 18.063240), span: MKCoordinateSpan(latitudeDelta: 150, longitudeDelta: 150))
 
     }
     
